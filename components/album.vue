@@ -1,12 +1,9 @@
 <template>
 	<div
 		class="album"
-		:style="{
-			'background-image': 'url(' + album.image + ')'
-		}"
 	>
 		<blurhash class="album__blurhash" :hash="album.blurhash" />
-		<img ref="image" :class="imageLoaded ? 'album__image--loaded' : ''" class="album__image" :src="album.image" :alt="album.artist + ' - ' + album.title + ' album cover'" @load="onImgLoad" />
+		<img ref="image" :style="{ opacity: imageLoaded }" class="album__image" :src="album.image" :alt="album.artist + ' - ' + album.title + ' album cover'" @load="onImageLoad" />
 		<div class="album__details">
 			<h2>{{ album.id }}. {{ album.artist }} - {{ album.title }}</h2>
 			<p>
@@ -25,7 +22,7 @@ export default {
 	},
 	data() {
 		return {
-			imageLoaded: false
+			imageLoaded: 0
 		};
 	},
 	props: {
@@ -39,8 +36,8 @@ export default {
 		}
 	},
 	methods: {
-		onImgLoad() {
-			this.imageLoaded = true;
+		onImageLoad() {
+			this.imageLoaded = 1;
 		}
 	}
 };
