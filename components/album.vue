@@ -1,10 +1,12 @@
 <template>
-	<p>
-		{{ album.id }}. {{ album.artist }} - {{ album.title }}<br />
-		<img :src="album.image" width="100" height="100" /><br />
-		{{ album.blurhash }}<br />
-		{{ album.artists }}
-	</p>
+	<div class="album">
+		<h2>{{ album.id }}. {{ album.artist }} - {{ album.title }}</h2>
+		<p>
+			<img :src="album.image" width="1000" height="1000" loading="lazy" /><br />
+			{{ album.blurhash }}<br />
+			{{ album.artists }}
+		</p>
+	</div>
 </template>
 
 <script>
