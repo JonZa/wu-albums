@@ -1,12 +1,10 @@
 <template>
-	<div class="game">
-		{{ album.id }}<br />
-		{{ album.artist }}<br />
-		{{ album.title }}<br />
-		{{ album.image }}<br />
+	<p>
+		{{ album.id }}. {{ album.artist }} - {{ album.title }}<br />
+		<img :src="album.image" width="100" height="100" /><br />
 		{{ album.blurhash }}<br />
-		{{ album.artists }}<br />
-	</div>
+		{{ album.artists }}
+	</p>
 </template>
 
 <script>
@@ -18,7 +16,7 @@ export default {
 			title: String,
 			image: String,
 			blurhash: String,
-			artists: [Array]
+			artists: Array
 		}
 	}
 };

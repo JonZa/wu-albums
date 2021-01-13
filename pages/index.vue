@@ -1,6 +1,9 @@
 <template>
 	<div class="container">
-		<h1>Top 10 Wu-Tang Clan Albums</h1>
+		<h1>
+			<small>Ranked:</small>
+			Top 10 Wu-Tang Clan Albums
+		</h1>
 
 		<main class="game-container">
 			<section v-for="album in wuData.albums" :key="album.id">
