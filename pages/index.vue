@@ -20,9 +20,6 @@ export default {
 	},
 	computed: {
 		...mapState(['wuData'])
-	},
-	created() {
-		console.log(this.wuData);
 	}
 };
 </script>

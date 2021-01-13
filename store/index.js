@@ -6,6 +6,10 @@ export const state = () => ({
 
 export const mutations = {
 	updateWuData: (state, data) => {
+		const albums = data.albums;
+		albums.sort((a, b) => {
+			return a.rank - b.rank;
+		});
 		state.wuData = data;
 	}
 };
@@ -22,6 +26,7 @@ export const actions = {
 						image
 						blurhash
 						artists
+						rank
 					}
 					artists {
 						id
