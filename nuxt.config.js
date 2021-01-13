@@ -4,9 +4,9 @@ export default {
 
 	// Global page headers (https://go.nuxtjs.dev/config-head)
 	head: {
-		title: 'wu-albums',
+		title: 'Top 10 Wu-Tang Clan Albums',
 		meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: '' }],
-		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }]
 	},
 
 	// Global CSS (https://go.nuxtjs.dev/config-css)
