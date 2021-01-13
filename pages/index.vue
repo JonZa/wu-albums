@@ -1,15 +1,13 @@
 <template>
-	<div class="container">
+	<div class="content">
 		<h1>
 			<small>Ranked:</small>
 			Top 10 Wu-Tang Clan Albums
 		</h1>
 
-		<main class="game-container">
-			<section v-for="album in wuData.albums" :key="album.id">
-				<Album :album="album" />
-			</section>
-		</main>
+		<div class="albums">
+			<Album v-for="album in wuData.albums" :key="album.id" :album="album" />
+		</div>
 	</div>
 </template>
 
