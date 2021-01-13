@@ -1,3 +1,29 @@
+const { createApolloFetch } = require('apollo-fetch');
+
+let dynamicRoutes = () => {
+	console.log('hi');
+	const uri = process.env.HASURA_ENDPOINT;
+	const apolloFetch = createApolloFetch({ uri });
+	const query = `
+	query allAlbums{
+		albums {
+			title
+		}
+	}
+	`;
+	return apolloFetch({ query }) // all apolloFetch arguments are optional
+		.then(result => {
+			const { data } = result;
+			const dynamicRoutes = data.albums.map(album => `/album/${album.title.toLowerCase()}`);
+			console.log(dynamicRoutes);
+			return dynamicRoutes;
+		})
+		.catch(error => {
+			console.log('got error');
+			console.log(error);
+		});
+};
+
 export default {
 	// Target (https://go.nuxtjs.dev/config-target)
 	target: 'static',
@@ -17,6 +43,9 @@ export default {
 
 	// Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
 	plugins: [`~/plugins/getWuData.server.js`],
+	generate: {
+		routes: dynamicRoutes
+	},
 
 	// Auto import components (https://go.nuxtjs.dev/config-components)
 	components: true,
