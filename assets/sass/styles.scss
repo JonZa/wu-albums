@@ -5,3 +5,10 @@
 @import 'shared/elements';
 @import 'shared/fonts';
 @import 'shared/page';
+@import 'components/albums';
+.container {
+	margin: 0 auto;
+	margin-top: 10vh;
+	width: 90%;
+	max-width: 1200px;
+}
