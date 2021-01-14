@@ -26,7 +26,7 @@ export default {
 	computed: {
 		...mapState(['wuData']),
 		filteredArtists: function() {
-			var artistName = this.artistName;
+			const artistName = this.artistName;
 			return this.wuData.artists.filter(function(artist) {
 				return artist.name.toLowerCase().indexOf(artistName.toLowerCase()) > -1;
 			});
@@ -42,8 +42,8 @@ export default {
 			console.log('submitForm');
 			console.log(event);
 			event.preventDefault();
-			var artistName = this.artistName;
-			var selectedArtist = this.wuData.artists.filter(function(artist) {
+			const artistName = this.artistName;
+			const selectedArtist = this.wuData.artists.filter(function(artist) {
 				return artist.name.toLowerCase() === artistName.toLowerCase();
 			});
 			if (selectedArtist.length) {
