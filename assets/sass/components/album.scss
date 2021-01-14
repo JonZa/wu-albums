@@ -5,6 +5,10 @@ $this: '.album';
 	overflow: hidden;
 	position: relative;
 	padding-top: 100%;
+	&--filtered {
+		filter: grayscale(1);
+		opacity: 0.5;
+	}
 	&,
 	&::before,
 	&__image {

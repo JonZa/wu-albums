@@ -1,7 +1,8 @@
 import gql from 'graphql-tag';
 
 export const state = () => ({
-	wuData: []
+	wuData: [],
+	selectedArtistId: null
 });
 
 export const mutations = {
@@ -11,6 +12,9 @@ export const mutations = {
 			return a.rank - b.rank;
 		});
 		state.wuData = data;
+	},
+	updateSelectedArtist: (state, data) => {
+		state.selectedArtistId = data;
 	}
 };
 
