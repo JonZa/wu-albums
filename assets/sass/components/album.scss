@@ -30,14 +30,14 @@ $this: '.album';
 		background: radial-gradient(circle at center, transparent, rgba(#000, 0.5));
 	}
 	&::after {
-        top: 0;
-        left: 0;
+		top: 0;
+		left: 0;
 		padding: 0 30px 30px 30px;
 		color: #fff;
 		font-family: 'Permanent Marker';
 		font-size: 3rem;
-        text-shadow: 3px 3px 6px #000;
-        background: linear-gradient(to bottom right, rgba(#000, 0.75), transparent 50%);
+		text-shadow: 3px 3px 6px #000;
+		background: linear-gradient(to bottom right, rgba(#000, 0.75), transparent 50%);
 	}
 	&:nth-child(n + 2)::after {
 		padding-left: 10px;
@@ -149,7 +149,7 @@ $this: '.album';
 		&-list {
 			font-size: 1.25rem;
 			list-style-type: none;
-			font-weight: 600;	
+			font-weight: 600;
 		}
 	}
 	&__artist {

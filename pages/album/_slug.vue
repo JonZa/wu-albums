@@ -1,7 +1,7 @@
 <template>
 	<div class="album__content">
 		<h2>
-			<small>Album:</small> {{ album.artist }}
+			<small>Album:</small> {{ album.artist }} -
 			<span class="album__title">{{ album.title }}</span>
 		</h2>
 		<div class="album__artists">

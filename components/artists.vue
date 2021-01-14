@@ -2,9 +2,9 @@
 	<div class="artists">
 		<form class="artists__filter" @submit="submitForm" ref="form">
 			<label for="artists__input" class="artists__label">Filter by artist:</label>
-			<input type="text" class="artists__input" v-model="artistName" ref="filter" @focusin="focus(true)" />
+			<input id="artists__input" type="text" class="artists__input" v-model="artistName" ref="filter" @focus="focus(true)" @blur="focus(false)" />
 			<div class="artists__dropdown" v-if="artistName.length > 1 && filterFocus">
-				<a v-for="artist in filteredArtists" :key="artist.id" @click="updateSelectedArtist(artist)"> {{ artist.name }} </a>
+				<a v-for="artist in filteredArtists" :key="artist.id" @mousedown="updateSelectedArtist(artist)"> {{ artist.name }} </a>
 			</div>
 		</form>
 	</div>
@@ -34,9 +34,13 @@ export default {
 	},
 	methods: {
 		focus(value) {
+			console.log('focus');
+			console.log(value);
 			return (this.filterFocus = value);
 		},
 		submitForm(event) {
+			console.log('submitForm');
+			console.log(event);
 			event.preventDefault();
 			var artistName = this.artistName;
 			var selectedArtist = this.wuData.artists.filter(function(artist) {
@@ -44,9 +48,13 @@ export default {
 			});
 			if (selectedArtist.length) {
 				this.$store.commit('updateSelectedArtist', selectedArtist[0].id);
+			} else {
+				this.$store.commit('updateSelectedArtist', null);
 			}
 		},
 		updateSelectedArtist(artist) {
+			console.log('updateSelectedArtist');
+			console.log(artist);
 			this.artistName = artist.name;
 			this.$store.commit('updateSelectedArtist', artist.id);
 			this.focus(false);
