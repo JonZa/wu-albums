@@ -1,6 +1,6 @@
 <template>
 	<div class="artists">
-		<form class="artists__filter" ref="form">
+		<form class="artists__filter" ref="form" @submit.prevent>
 			<label for="artists__input" class="artists__label">Filter by artist:</label>
 			<input id="artists__input" type="text" class="artists__input" v-model="artistName" ref="filter" @focus="focus(true)" @blur="focus(false)" />
 			<div class="artists__dropdown" v-if="artistName.length > 1 && filterFocus">
