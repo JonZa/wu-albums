@@ -1,8 +1,12 @@
 .albums {
 	display: grid;
-	grid-template-columns: repeat(14, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(6, 1fr);
 	grid-column-gap: 15px;
 	grid-row-gap: 15px;
 	margin-bottom: 20px;
+	@include media('>=tablet') {
+		grid-template-columns: repeat(14, 1fr);
+		grid-template-rows: repeat(6, 1fr);
+	}
 }

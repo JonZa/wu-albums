@@ -3,8 +3,12 @@
 	--transition-duration-slow: 1s;
 	--transition-property: all;
 	--transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-	--col-1: calc(100% / 15 * 3.5);
-	--col-2: calc(100% / 15 * 7.5);
+	--col-1: 100%;
+	--col-2: 100%;
+	@include media('>=tablet') {
+		--col-1: calc(100% / 15 * 3.5);
+		--col-2: calc(100% / 15 * 6.5);
+	}
 }
 @media screen and (prefers-reduced-motion: reduce), (update: slow) {
 	:root {
