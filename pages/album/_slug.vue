@@ -1,6 +1,6 @@
 <template>
 	<div class="content">
-		<h1>{{ album.artist }} - {{ album.title }}</h1>
+		<h2><small>{{ album.rank }} .</small> {{ album.artist }} - {{ album.title }}</h2>
 		<ul>
 			<li v-for="artist in album.artists" :key="artist" v-text="artists.filter(el => el.id === artist)[0].name" />
 		</ul>

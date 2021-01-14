@@ -1,17 +1,15 @@
 <template>
-	<div
-		class="album"
-	>
+	<nuxt-link :to="'/album/' + album.title.toLowerCase()" class="album">
 		<blurhash class="album__blurhash" :hash="album.blurhash" />
 		<img ref="image" :style="{ opacity: imageLoaded }" class="album__image" :src="album.image" :alt="album.artist + ' - ' + album.title + ' album cover'" @load="onImageLoad" />
 		<div class="album__details">
-			<h2>{{ album.id }}. {{ album.artist }} - {{ album.title }}</h2>
+			<h2>{{ album.rank }}. {{ album.artist }} - {{ album.title }}</h2>
 			<p>
 				{{ album.blurhash }}<br />
 				{{ album.artists }}
 			</p>
 		</div>
-	</div>
+	</nuxt-link>
 </template>
 
 <script>
@@ -28,6 +26,7 @@ export default {
 	props: {
 		album: {
 			id: Number,
+			rank: Number,
 			artist: String,
 			title: String,
 			image: String,
