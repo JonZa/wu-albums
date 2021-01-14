@@ -1,5 +1,6 @@
 html {
 	font-size: 14px;
+	scroll-behavior: smooth;
 	@include media('>=desktop') {
 		font-size: 16px;
 	}
