@@ -1,0 +1,14 @@
+.artists {
+	&__filter {
+		position: relative;
+	}
+	&__dropdown {
+        background: #fff;
+		position: absolute;
+        top: 100%;
+        z-index: 3;
+        a {
+            color: $shark;
+        }
+	}
+}

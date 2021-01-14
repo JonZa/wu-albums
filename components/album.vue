@@ -1,7 +1,7 @@
 <template>
 	<nuxt-link :to="'/album/' + album.title.toLowerCase()" class="album" :class="!selectedArtistOnAlbum ? 'album--filtered' : ''">
 		<blurhash class="album__blurhash" :hash="album.blurhash" />
-		<!-- <img ref="image" :style="{ opacity: imageLoaded }" class="album__image" :src="album.image" :alt="album.artist + ' - ' + album.title + ' album cover'" @load="onImageLoad" /> -->
+		<!-- <img :style="{ opacity: imageLoaded }" class="album__image" :src="album.image" :alt="album.artist + ' - ' + album.title + ' album cover'" @load="onImageLoad" /> -->
 		<div class="album__details">
 			<!-- <h2>{{ album.rank }}. {{ album.artist }} - {{ album.title }}</h2>
 			<p>
