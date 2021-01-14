@@ -135,4 +135,29 @@ $this: '.album';
 		width: 100%;
 		height: 100%;
 	}
+	&__title {
+		display: block;
+		margin-left: calc(var(--col-1) + 15px);
+	}
+	&__artists {
+		margin-left: calc(var(--col-1) + 15px);
+		position: relative;
+		h3 {
+			position: absolute;
+			transform: translatex(calc(-100% - 30px));
+		}
+		&-list {
+			font-size: 1.25rem;
+			list-style-type: none;
+			font-weight: 600;	
+		}
+	}
+	&__artist {
+		display: inline-block;
+		&:not(:last-child)::after {
+			display: inline;
+			content: ',';
+			margin-right: 10px;
+		}
+	}
 }

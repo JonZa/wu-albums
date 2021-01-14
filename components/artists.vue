@@ -1,7 +1,8 @@
 <template>
 	<div class="artists">
 		<form class="artists__filter" @submit="submitForm" ref="form">
-			<input type="text" v-model="artistName" ref="filter" @focusin="focus(true)" />
+			<label for="artists__input" class="artists__label">Filter by artist:</label>
+			<input type="text" class="artists__input" v-model="artistName" ref="filter" @focusin="focus(true)" />
 			<div class="artists__dropdown" v-if="artistName.length > 1 && filterFocus">
 				<a v-for="artist in filteredArtists" :key="artist.id" @click="updateSelectedArtist(artist)"> {{ artist.name }} </a>
 			</div>

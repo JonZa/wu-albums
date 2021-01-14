@@ -1,9 +1,15 @@
 <template>
-	<div class="content">
-		<h2><small>{{ album.rank }} .</small> {{ album.artist }} - {{ album.title }}</h2>
-		<ul>
-			<li v-for="artist in album.artists" :key="artist" v-text="artists.filter(el => el.id === artist)[0].name" />
-		</ul>
+	<div class="album__content">
+		<h2>
+			<small>Album:</small> {{ album.artist }}
+			<span class="album__title">{{ album.title }}</span>
+		</h2>
+		<div class="album__artists">
+			<h3>Artists:</h3>
+			<ul class="album__artists-list">
+				<li class="album__artist" v-for="artist in album.artists" :key="artist" v-text="artists.filter(el => el.id === artist)[0].name" />
+			</ul>
+		</div>
 	</div>
 </template>
 

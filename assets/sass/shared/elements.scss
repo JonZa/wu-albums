@@ -1,5 +1,5 @@
 body {
-	background: linear-gradient(to bottom right, #3a6186, #89253e);
+	background: linear-gradient(to bottom right, $chambray, $umber);
 	font-family: 'Nunito';
 	color: #fff;
 	min-height: 100vh;
@@ -8,24 +8,42 @@ body {
 h1 {
 	font-size: 36px;
 	line-height: 45px;
-	margin-bottom: 20px;
 	font-weight: 600;
-	small {
-		font-weight: 200;
-		font-size: 100%;
-	}
+	text-transform: uppercase;
 }
 h2 {
 	font-size: 24px;
 	line-height: 30px;
-	padding-top: 1px;
-	color: lighten(#95d2e4, 10%);
-	small {
-		color: mix(#fff, lighten($shark, 10%));
-	}
+}
+h3 {
+	font-size: 1.25rem;
+	line-height: 30px;
 }
 h1,
 h2,
+h3 {
+	margin-bottom: 20px;
+}
+h3 {
+	font-weight: 200;
+}
+h1,
+h2 {
+	small {
+		width: var(--col-1);
+		padding-right: 10px;
+		margin-right: 10px;
+		display: inline-block;
+		text-align: right;
+	}
+}
+small {
+	font-weight: 200;
+	font-size: 100%;
+}
+h1,
+h2,
+h3,
 p {
 	margin-bottom: 20px;
 }
