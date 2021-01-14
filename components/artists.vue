@@ -1,7 +1,7 @@
 <template>
 	<div class="artists">
-		<form class="artists__filter" @submit="submitForm">
-			<input type="text" v-model="artistName" ref="filter" @focus="focus" />
+		<form class="artists__filter" @submit="submitForm" ref="form">
+			<input type="text" v-model="artistName" ref="filter" @focusin="focus(true)" />
 			<div class="artists__dropdown" v-if="artistName.length > 1 && filterFocus">
 				<a v-for="artist in filteredArtists" :key="artist.id" @click="updateSelectedArtist(artist)"> {{ artist.name }} </a>
 			</div>
@@ -32,12 +32,9 @@ export default {
 		}
 	},
 	methods: {
-		focus() {
-			return this.filterFocus = true;
+		focus(value) {
+			return (this.filterFocus = value);
 		},
-		// blur() {
-		// 	return this.filterFocus = false;
-		// },
 		submitForm(event) {
 			event.preventDefault();
 			var artistName = this.artistName;
@@ -51,7 +48,7 @@ export default {
 		updateSelectedArtist(artist) {
 			this.artistName = artist.name;
 			this.$store.commit('updateSelectedArtist', artist.id);
-			this.filterFocus = false;
+			this.focus(false);
 		}
 	}
 };
