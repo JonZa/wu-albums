@@ -5,6 +5,7 @@
 @import 'shared/elements';
 @import 'shared/fonts';
 @import 'shared/page';
+@import 'shared/nuxt';
 @import 'components/artists';
 @import 'components/albums';
 @import 'components/album';
@@ -13,4 +14,8 @@
 	padding: 10vh 0;
 	width: 90%;
 	max-width: 1200px;
+}
+.content {
+	position: relative;
+	z-index: 3;
 }

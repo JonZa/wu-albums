@@ -198,4 +198,8 @@ $this: '.album';
 			margin-right: 10px;
 		}
 	}
+	&__content {
+		position: relative;
+		z-index: 3;
+	}
 }
