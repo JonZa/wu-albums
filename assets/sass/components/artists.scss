@@ -37,18 +37,38 @@
 			border-color: rgba(#fff, 0.5);
 		}
 	}
+	&__clear {
+		background: transparent;
+		border: 0;
+		// outline: none;
+		background: rgba(255,255,255,0.5);
+		background: linear-gradient(to top left, $chambray, $umber);
+		background-attachment: fixed;
+		border: 2px solid rgba(#fff, 0.5);
+		color: #fff;
+		font-size: 1rem;
+		font-weight: 600;
+		padding: 8px 10px;
+		margin-left: 5px;
+		vertical-align: bottom;
+		border-radius: 4px;
+		opacity: 0;
+		transition: var(--transition);
+		&--active {
+			opacity: 1;
+		}
+	}
 	&__dropdown {
 		position: absolute;
 		top: calc(100% + 1px);
 		border-radius: 0 0 2px 2px;
 		left: 0;
-		width: calc(var(--col-2));
-		border: 2px sold transparent;
+		width: calc(var(--col-2) - 2px);
 		z-index: 3;
 		@include media('>=tablet') {
 			left: calc(var(--col-1) + 20px);
 		}
-		a {
+		&-artist {
 			background: rgba(#fff, 0.75);
 			color: $umber;
 			display: block;
@@ -60,6 +80,9 @@
 			transition-duration: var(--transition-duration-slow);
 			cursor: pointer;
 			text-transform: uppercase;
+			text-align: left;
+			outline: none;
+			border: 0;
 			@include media('>=tablet') {
 				padding: 5px 12px;
 			}

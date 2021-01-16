@@ -8,9 +8,14 @@ html {
 
 body {
 	background: linear-gradient(to bottom right, $chambray, $umber);
-	font-family: 'Nunito';
 	color: #fff;
 	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+body,
+button {
+	font-family: 'Nunito';
 }
 
 h1 {
