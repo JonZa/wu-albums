@@ -1,6 +1,6 @@
-# Top 10 Wu-Tang Clan Albums
+# 👐 Top 10 Wu-Tang Clan Albums 👐
 
-🔥👐🔥
+🔥🔥🔥
 
 ## Build Setup
 
@@ -20,3 +20,5 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+🔥🔥🔥

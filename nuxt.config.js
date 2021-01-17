@@ -1,7 +1,6 @@
 const { createApolloFetch } = require('apollo-fetch');
 
 let dynamicRoutes = () => {
-	console.log('hi');
 	const uri = process.env.HASURA_ENDPOINT;
 	const apolloFetch = createApolloFetch({ uri });
 	const query = `
@@ -15,7 +14,6 @@ let dynamicRoutes = () => {
 		.then(result => {
 			const { data } = result;
 			const dynamicRoutes = data.albums.map(album => `/album/${album.title.toLowerCase()}`);
-			console.log(dynamicRoutes);
 			return dynamicRoutes;
 		})
 		.catch(error => {

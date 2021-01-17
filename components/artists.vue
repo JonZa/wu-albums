@@ -28,7 +28,6 @@ export default {
 			const selectedArtist = this.wuData.artists.filter(function(artist) {
 				return artist.name.toLowerCase() === newValue.toLowerCase();
 			});
-			console.log(selectedArtist);
 			if (selectedArtist.length === 1) {
 				this.$store.commit('updateSelectedArtist', selectedArtist[0].id);
 			} else {
