@@ -1,6 +1,9 @@
 .container {
 	margin: 0 auto;
-	padding: 10vh 0;
+	padding: 2.5vh 0;
 	width: 90%;
 	max-width: 1200px;
+	@include media('>=tablet') {
+		padding: 10vh 0;
+	}
 }

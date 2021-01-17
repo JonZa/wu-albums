@@ -2,10 +2,12 @@
 	<div class="artists">
 		<form class="artists__filter" ref="form" @submit.prevent>
 			<label for="artists__input" class="artists__label">Filter by artist:</label>
-			<input id="artists__input" type="text" class="artists__input" v-model="artistName" ref="filter" @focus="focus(true)" @blur="focus(false)" autocomplete="off" />
-			<button type="button" @click="clearArtist" class="artists__clear" :class="artistName.length > 1 ? 'artists__clear--active' : ''">Clear</button>
-			<div class="artists__dropdown" v-if="artistName.length > 1 && filterFocus">
-				<button class="artists__dropdown-artist" type="button" v-for="artist in filteredArtists" :key="artist.id" @mousedown="updateSelectedArtist(artist)">{{ artist.name }}</button>
+			<div class="artists__fields">
+				<input id="artists__input" type="text" class="artists__input" v-model="artistName" ref="filter" @focus="focus(true)" @blur="focus(false)" autocomplete="off" />
+				<button type="button" @click="clearArtist" class="artists__clear" :class="artistName.length > 1 ? 'artists__clear--active' : ''">Clear</button>
+				<div class="artists__dropdown" v-if="artistName.length > 1 && filterFocus">
+					<button class="artists__dropdown-artist" type="button" v-for="artist in filteredArtists" :key="artist.id" @mousedown="updateSelectedArtist(artist)">{{ artist.name }}</button>
+				</div>
 			</div>
 		</form>
 	</div>
