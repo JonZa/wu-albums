@@ -1,7 +1,7 @@
 const { createApolloFetch } = require('apollo-fetch');
 
 let dynamicRoutes = () => {
-	const uri = process.env.HASURA_ENDPOINT;
+	const uri = process.env.WU_ENDPOINT;
 	const apolloFetch = createApolloFetch({ uri });
 	const query = `
 	query allAlbums{
@@ -59,7 +59,7 @@ export default {
 	apollo: {
 		clientConfigs: {
 			default: {
-				httpEndpoint: process.env.HASURA_ENDPOINT
+				httpEndpoint: process.env.WU_ENDPOINT
 			}
 		}
 	}
